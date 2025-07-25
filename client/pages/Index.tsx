@@ -8,7 +8,7 @@ const Index = () => {
       name: "Cà Phê Sữa",
       description: "Hương vị truyền thống, đậm đà khó quên.",
       image:
-        "images/cafe_sua.png",
+        "./images/cafe_sua.png",
     },
     {
       id: 2,
