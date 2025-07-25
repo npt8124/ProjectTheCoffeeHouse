@@ -82,32 +82,68 @@ const Order = () => {
       </section>
 
       <div className="container py-5">
-        <div className="row g-4">
-          {/* Left Column */}
-          <div className="col-12 col-lg-8 d-flex flex-column gap-4">
-            {/* Delivery Method */}
-            <div className="bg-white rounded shadow-sm p-4">
-              <h2 className="fs-5 fw-bold text-dark mb-3">Phương thức nhận hàng</h2>
-              <div className="row g-2">
-                <div className="col-12 col-md-6">
-                  <label className={`form-control d-flex align-items-center gap-2 p-3 border-2 rounded ${deliveryMethod === "delivery" ? 'border-warning bg-warning bg-opacity-10' : ''}`}
-                    style={deliveryMethod === "delivery" ? {borderColor:'#FFC107', background:'rgba(255,193,7,0.1)'} : {}}>
-                    <input type="radio" name="delivery" value="delivery" checked={deliveryMethod === "delivery"} onChange={(e) => setDeliveryMethod(e.target.value)} className="form-check-input me-2" />
-                    <span className="fs-4">🚚</span>
-                    <span className="fw-bold">Giao hàng tận nơi</span>
-                    <span className="text-secondary ms-2">Phí giao hàng: 15.000đ</span>
-                  </label>
-                </div>
-                <div className="col-12 col-md-6">
-                  <label className={`form-control d-flex align-items-center gap-2 p-3 border-2 rounded ${deliveryMethod === "pickup" ? 'border-warning bg-warning bg-opacity-10' : ''}`}
-                    style={deliveryMethod === "pickup" ? {borderColor:'#FFC107', background:'rgba(255,193,7,0.1)'} : {}}>
-                    <input type="radio" name="delivery" value="pickup" checked={deliveryMethod === "pickup"} onChange={(e) => setDeliveryMethod(e.target.value)} className="form-check-input me-2" />
-                    <span className="fs-4">🏪</span>
-                    <span className="fw-bold">Nhận tại cửa hàng</span>
-                    <span className="text-secondary ms-2">Miễn phí</span>
-                  </label>
-                </div>
+        <div className="row g-2">
+          {/* Giao hàng tận nơi */}
+          <div className="col-12 col-md-6">
+            <label
+              className={`form-control d-flex align-items-start gap-3 p-3 border-2 rounded h-100 ${
+                deliveryMethod === "delivery" ? "border-warning bg-warning bg-opacity-10" : ""
+              }`}
+              style={
+                deliveryMethod === "delivery"
+                  ? { borderColor: "#FFC107", background: "rgba(255,193,7,0.1)" }
+                  : {}
+              }
+            >
+              <input
+                type="radio"
+                name="delivery"
+                value="delivery"
+                checked={deliveryMethod === "delivery"}
+                onChange={(e) => setDeliveryMethod(e.target.value)}
+                className="form-check-input mt-1"
+              />
+              <span className="fs-3">🚚</span>
+              <div className="d-flex flex-column">
+                <span className="fw-bold">Giao hàng tận nơi</span>
+                <span className="text-secondary" style={{ fontSize: 14 }}>
+                  Phí giao hàng: 15.000đ
+                </span>
               </div>
+            </label>
+          </div>
+
+          {/* Nhận tại cửa hàng */}
+          <div className="col-12 col-md-6">
+            <label
+              className={`form-control d-flex align-items-start gap-3 p-3 border-2 rounded h-100 ${
+                deliveryMethod === "pickup" ? "border-warning bg-warning bg-opacity-10" : ""
+              }`}
+              style={
+                deliveryMethod === "pickup"
+                  ? { borderColor: "#FFC107", background: "rgba(255,193,7,0.1)" }
+                  : {}
+              }
+            >
+              <input
+                type="radio"
+                name="delivery"
+                value="pickup"
+                checked={deliveryMethod === "pickup"}
+                onChange={(e) => setDeliveryMethod(e.target.value)}
+                className="form-check-input mt-1"
+              />
+              <span className="fs-3">🏪</span>
+              <div className="d-flex flex-column">
+                <span className="fw-bold">Nhận tại cửa hàng</span>
+                <span className="text-secondary" style={{ fontSize: 14 }}>
+                  Miễn phí
+                </span>
+              </div>
+            </label>
+          </div>
+        </div>
+
             </div>
 
             {/* Cart Items */}
