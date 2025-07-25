@@ -34,7 +34,7 @@ const Stores = () => {
     {
       id: 2,
       name: "The Coffee House Landmark 81",
-      address: "T��ng G, Landmark 81, Bình Thạnh, TP. Hồ Chí Minh",
+      address: "Tầng G, Landmark 81, Bình Thạnh, TP. Hồ Chí Minh",
       phone: "028 3844 5678",
       hours: "07:00 - 23:00",
       city: "Hồ Chí Minh",
@@ -117,13 +117,13 @@ const Stores = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0 opacity-95">
+        <div className="absolute inset-0">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/65"></div>
+          <div className="absolute inset-0 bg-black/65 opacity-60"></div>
         </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">

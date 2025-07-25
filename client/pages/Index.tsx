@@ -30,7 +30,7 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0 opacity-95">
+        <div className="absolute inset-0">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"

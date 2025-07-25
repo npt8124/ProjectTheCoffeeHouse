@@ -6,7 +6,7 @@ const Order = () => {
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
-      name: "Cà Phê Đen",
+      name: "Cà Phê Sữa",
       size: "Size M",
       price: 30000,
       quantity: 2,

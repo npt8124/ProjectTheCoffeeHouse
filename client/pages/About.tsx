@@ -18,7 +18,7 @@ const About = () => {
       icon: "💛",
       title: "Phục vụ tận tâm",
       description:
-        "Đội ngũ nhân viên luôn niềm nở, tận t��nh để khách hàng cảm thấy như ở nhà.",
+        "Đội ngũ nhân viên luôn niềm nở, tận tình để khách hàng cảm thấy như ở nhà.",
     },
   ];
 
@@ -26,17 +26,17 @@ const About = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0 opacity-95">
+        <div className="absolute inset-0">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/65"></div>
+          <div className="absolute inset-0 bg-black/65 opacity-60"></div>
         </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-[60px] font-bold leading-[30px] mb-4">
+          <h1 className="text-[60px] font-bold leading-[30px] mb-10">
             Giới thiệu
           </h1>
           <p className="text-[28px] font-normal leading-[30px] max-w-[679px]">

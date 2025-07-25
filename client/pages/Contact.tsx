@@ -5,17 +5,17 @@ const Contact = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0 opacity-95">
+        <div className="absolute inset-0">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/65"></div>
+          <div className="absolute inset-0 bg-black/65 opacity-60"></div>
         </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-[60px] font-bold leading-[30px] mb-4">Liên Hệ</h1>
+          <h1 className="text-[60px] font-bold leading-[30px] mb-10">Liên Hệ</h1>
           <p className="text-[28px] font-normal leading-[30px] max-w-[679px]">
             Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn
           </p>
