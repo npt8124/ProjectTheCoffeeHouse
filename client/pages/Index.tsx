@@ -5,10 +5,10 @@ const Index = () => {
   const featuredItems = [
     {
       id: 1,
-      name: "Cà Phê Đen",
+      name: "Cà Phê Sữa",
       description: "Hương vị truyền thống, đậm đà khó quên.",
       image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/437718d6214232d7427270e3fbfe29eaff268cd6?width=548",
+        "images/cafe_sua.png",
     },
     {
       id: 2,
