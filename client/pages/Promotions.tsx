@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "../components/Layout";
 
 const Promotions = () => {
@@ -45,59 +46,42 @@ const Promotions = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="position-relative overflow-hidden" style={{height:397}}>
+        <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity:1}}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"
-            className="w-full h-full object-cover"
+            className="w-100 h-100 object-fit-cover"
           />
-          <div className="absolute inset-0 bg-black/65 opacity-60"></div>
+          <div className="position-absolute top-0 start-0 w-100 h-100" style={{background:'rgba(0,0,0,0.65)'}}></div>
         </div>
-
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-[60px] font-bold leading-[30px] mb-10">
-            Chương Trình Khuyến Mãi
-          </h1>
-          <p className="text-[28px] font-normal leading-[30px] max-w-[679px]">
-            Ưu đãi đặc biệt dành riêng cho bạn!
-          </p>
+           <div className="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white px-3" style={{zIndex: 3, height: 397}}>
+             <h1 className="fw-bold mb-3 pt-5" style={{fontSize: 48, lineHeight: 1.1}}>Chương Trình Khuyến Mãi</h1>
+             <p className="mb-4 mx-auto" style={{fontSize: 22, maxWidth: 700}}>
+               Đừng bỏ lỡ các ưu đãi hấp dẫn từ The Coffee House
+             </p>
         </div>
       </section>
 
       {/* Promotions Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="text-[32px] font-bold leading-[30px] text-black text-center mb-12">
-            Ưu Đãi Hiện Có
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1326px] mx-auto">
+      <section className="py-5 px-4">
+        <div className="container">
+          <h2 className="fs-1 fw-bold text-dark text-center mb-5">Ưu Đãi Hiện Có</h2>
+          <div className="row justify-content-center gx-4 gy-4" style={{maxWidth:1326, margin:'0 auto'}}>
             {promotions.map((promo) => (
-              <div key={promo.id} className="group">
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-white/3">
-                  <div
-                    className={
-                      promo.name === "Trà Đào Cam Sả"
-                        ? "px-6 pt-6 pb-[57px]"
-                        : promo.name === "Dâu Phô Mai"
-                          ? "px-6 pt-6 pb-[57px]"
-                          : "p-6"
-                    }
-                  >
-                    <div className="w-[274px] h-[274px] mx-auto mb-6 overflow-hidden rounded-lg">
+              <div key={promo.id} className="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div className="card w-100 shadow border-0">
+                  <div className="p-4">
+                    <div className="mx-auto mb-4 overflow-hidden rounded" style={{width:274, height:274}}>
                       <img
                         src={promo.image}
                         alt={promo.name}
-                        className="w-full h-full object-cover"
+                        className="w-100 h-100 object-fit-cover"
+                        style={{objectFit:'cover'}}
                       />
                     </div>
-                    <h3 className="text-[32px] font-bold leading-[30px] text-black text-center mb-4">
-                      {promo.name}
-                    </h3>
-                    <p className="text-[20px] font-normal leading-[30px] text-black text-center">
-                      {promo.description}
-                    </p>
+                    <h3 className="fs-2 fw-bold text-dark text-center mb-3">{promo.name}</h3>
+                    <p className="fs-5 fw-normal text-dark text-center">{promo.description}</p>
                   </div>
                 </div>
               </div>

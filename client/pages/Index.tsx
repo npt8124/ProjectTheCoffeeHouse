@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
@@ -5,7 +6,7 @@ const Index = () => {
   const featuredItems = [
     {
       id: 1,
-      name: "Cà Phê Đen",
+      name: "Cà Phê Sữa",
       description: "Hương vị truyền thống, đậm đà khó quên.",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/437718d6214232d7427270e3fbfe29eaff268cd6?width=548",
@@ -29,71 +30,64 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
-            alt="Coffee shop interior"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/65 opacity-60"></div>
-        </div>
-
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold leading-tight mb-4 pt-[70px]">
+      <section className="position-relative overflow-hidden" style={{height: 397}}>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
+          alt="Coffee shop interior"
+          className="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+          style={{zIndex: 1, height: 397, objectFit: 'cover'}}
+        />
+        <div className="position-absolute top-0 start-0 w-100 h-100" style={{zIndex: 2, height: 397, background: 'rgba(0,0,0,0.65)'}}></div>
+        <div className="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white px-3" style={{zIndex: 3, height: 397}}>
+          <h1 className="fw-bold mb-3 pt-5" style={{fontSize: 48, lineHeight: 1.1}}>
             Hương Vị Cà Phê Đích Thực
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-[28px] font-normal leading-relaxed mb-8 max-w-[693px]">
+          <p className="mb-4 mx-auto" style={{fontSize: 22, maxWidth: 700}}>
             Cùng The Coffee House nâng niu từng khoảnh khắc
           </p>
           <Link
             to="/menu"
-            className="bg-[#FFC107] text-black text-lg sm:text-xl md:text-2xl lg:text-[28px] font-normal leading-relaxed px-6 md:px-8 py-3 md:py-4 rounded-[10px] hover:bg-[#FFB300] transition-colors"
+            className="btn btn-warning fw-bold px-4 py-2"
+            style={{fontSize: 24, borderRadius: 8, fontWeight: 400}}
           >
-            <b>Khám Phá Menu</b>
+            Khám Phá Menu
           </Link>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[32px] font-bold leading-[30px] text-black mb-8">
+      <section className="py-5 px-3">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-3" style={{fontSize: 32, lineHeight: '30px', color: '#000'}}>
             Về Chúng Tôi
           </h2>
-          <p className="text-[20px] font-normal leading-[30px] text-black max-w-[1048px] mx-auto">
-            The Coffee House không chỉ là một quán cà phê, mà là một trải
-            nghiệm. Chúng tôi mang đến không gian hiện đại, thân thiện cùng
-            những ly cà phê chất lượng, phục vụ cho giới trẻ Việt.
+          <p className="mx-auto" style={{fontSize: 20, color: '#000', maxWidth: 1048}}>
+            The Coffee House không chỉ là một quán cà phê, mà là một trải nghiệm. Chúng tôi mang đến không gian hiện đại, thân thiện cùng những ly cà phê chất lượng, phục vụ cho giới trẻ Việt.
           </p>
         </div>
       </section>
 
       {/* Featured Menu */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="text-[32px] font-bold leading-[30px] text-black text-center mb-12">
+      <section className="py-5 px-3 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-4" style={{fontSize: 32, color: '#000', lineHeight: '30px'}}>
             Menu Nổi Bật
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-[1296px] mx-auto">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
             {featuredItems.map((item) => (
-              <div key={item.id} className="group">
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-white/3">
-                  <div className="p-4 lg:p-6">
-                    <div className="w-full max-w-[274px] aspect-square mx-auto mb-4 lg:mb-6 overflow-hidden rounded-lg">
+              <div key={item.id} className="col d-flex align-items-stretch">
+                <div className="card shadow-sm border-0 w-100">
+                  <div className="card-body d-flex flex-column align-items-center">
+                    <div className="mb-3" style={{width: 180, height: 180, overflow: 'hidden', borderRadius: 16}}>
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-cover"
+                        className="w-100 h-100 object-fit-cover rounded"
+                        style={{objectFit: 'cover', width: '100%', height: '100%'}}
                       />
                     </div>
-                    <h3 className="text-xl md:text-2xl lg:text-[32px] font-bold leading-tight text-black text-center mb-2 lg:mb-4">
-                      {item.name}
-                    </h3>
-                    <p className="text-lg md:text-xl lg:text-[24px] font-normal leading-relaxed text-black text-center">
-                      {item.description}
-                    </p>
+                    <h3 className="fw-bold text-center mb-2" style={{fontSize: 24, color: '#000'}}>{item.name}</h3>
+                    <p className="text-center mb-0" style={{fontSize: 18, color: '#000'}}>{item.description}</p>
                   </div>
                 </div>
               </div>
@@ -103,31 +97,29 @@ const Index = () => {
       </section>
 
       {/* Promotion Banner */}
-      <section className="bg-[#FFC107] py-16 px-4">
-        <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[32px] font-bold leading-[30px] text-black mb-4">
+      <section className="bg-warning py-4">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-2" style={{fontSize: 28, color: '#000', lineHeight: '30px'}}>
             🎉 Ưu Đãi Đặc Biệt
           </h2>
-          <p className="text-[20px] font-normal leading-[30px] text-black max-w-[1226px] mx-auto">
-            Mua 1 tặng 1 cho tất cả đơn hàng từ 2 ly trở lên. Áp dụng khung giờ
-            14h - 18h hôm nay!
+          <p className="mb-0 mx-auto" style={{fontSize: 18, color: '#000', maxWidth: 900}}>
+            Mua 1 tặng 1 cho tất cả đơn hàng từ 2 ly trở lên. Áp dụng khung giờ 14h - 18h hôm nay!
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[24px] font-bold leading-[30px] text-black mb-4">
+      <section className="py-4">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-2" style={{fontSize: 22, color: '#000', lineHeight: '30px'}}>
             Liên Hệ Chúng Tôi
           </h2>
-          <div className="space-y-2">
-            <p className="text-base font-bold text-black">
-              Email:{" "}
-              <span className="font-normal">support@thecoffeehouse.vn</span>
+          <div>
+            <p className="mb-1 fw-bold" style={{color: '#000'}}>
+              Email: <span className="fw-normal">support@thecoffeehouse.vn</span>
             </p>
-            <p className="text-base font-bold text-black">
-              Hotline: <span className="font-normal">1800 6936 (miễn phí)</span>
+            <p className="mb-0 fw-bold" style={{color: '#000'}}>
+              Hotline: <span className="fw-normal">1800 6936 (miễn phí)</span>
             </p>
           </div>
         </div>

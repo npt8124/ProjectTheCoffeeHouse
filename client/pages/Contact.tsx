@@ -1,90 +1,68 @@
+import React from "react";
 import Layout from "../components/Layout";
 
 const Contact = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="position-relative overflow-hidden" style={{height:397}}>
+        <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity:1}}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"
-            className="w-full h-full object-cover"
+            className="w-100 h-100 object-fit-cover"
           />
-          <div className="absolute inset-0 bg-black/65 opacity-60"></div>
+          <div className="position-absolute top-0 start-0 w-100 h-100" style={{background:'rgba(0,0,0,0.65)'}}></div>
         </div>
-
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-[60px] font-bold leading-[30px] mb-10">Liên Hệ</h1>
-          <p className="text-[28px] font-normal leading-[30px] max-w-[679px]">
+        <div className="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white px-3" style={{zIndex: 3, height: 397}}>
+          <h1 className="fw-bold mb-3 pt-5" style={{fontSize: 48, lineHeight: 1.1}}>Liên Hệ</h1>
+          <p className="mb-4 mx-auto" style={{fontSize: 22, maxWidth: 700}}>
             Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn
           </p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 px-4">
-        <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[32px] font-bold leading-[30px] text-black mb-12">
+      <section className="py-5 px-4">
+        <div className="container text-center">
+          <h2 className="fs-1 fw-bold text-dark mb-5">
             Thông Tin Liên Hệ
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-[800px] mx-auto">
-            <div className="text-center">
-              <h3 className="text-[24px] font-bold leading-[30px] text-black mb-4">
-                📧 Email
-              </h3>
-              <p className="text-[20px] font-normal leading-[30px] text-black">
-                support@thecoffeehouse.vn
-              </p>
+          <div className="row justify-content-center gx-5 gy-4" style={{maxWidth:800, margin:'0 auto'}}>
+            <div className="col-12 col-md-6 text-center">
+              <h3 className="fs-3 fw-bold text-dark mb-3">📧 Email</h3>
+              <p className="fs-5 fw-normal text-dark">support@thecoffeehouse.vn</p>
             </div>
-
-            <div className="text-center">
-              <h3 className="text-[24px] font-bold leading-[30px] text-black mb-4">
-                📞 Hotline
-              </h3>
-              <p className="text-[20px] font-normal leading-[30px] text-black">
-                1800 6936 (miễn phí)
-              </p>
+            <div className="col-12 col-md-6 text-center">
+              <h3 className="fs-3 fw-bold text-dark mb-3">📞 Hotline</h3>
+              <p className="fs-5 fw-normal text-dark">1800 6936 (miễn phí)</p>
             </div>
-
-            <div className="text-center">
-              <h3 className="text-[24px] font-bold leading-[30px] text-black mb-4">
-                🕒 Giờ Hoạt Động
-              </h3>
-              <p className="text-[20px] font-normal leading-[30px] text-black">
-                Thứ 2 - Chủ Nhật: 6:00 - 22:00
-              </p>
+            <div className="col-12 col-md-6 text-center">
+              <h3 className="fs-3 fw-bold text-dark mb-3">🕒 Giờ Hoạt Động</h3>
+              <p className="fs-5 fw-normal text-dark">Thứ 2 - Chủ Nhật: 6:00 - 22:00</p>
             </div>
-
-            <div className="text-center">
-              <h3 className="text-[24px] font-bold leading-[30px] text-black mb-4">
-                📍 Địa Chỉ
-              </h3>
-              <p className="text-[20px] font-normal leading-[30px] text-black">
-                Toàn quốc - Nhiều chi nhánh
-              </p>
+            <div className="col-12 col-md-6 text-center">
+              <h3 className="fs-3 fw-bold text-dark mb-3">📍 Địa Chỉ</h3>
+              <p className="fs-5 fw-normal text-dark">Toàn quốc - Nhiều chi nhánh</p>
             </div>
           </div>
-
-          <div className="mt-16 p-8 bg-gray-50 rounded-lg">
-            <h3 className="text-[28px] font-bold leading-[30px] text-black mb-6">
-              Gửi Tin Nhắn Cho Chúng Tôi
-            </h3>
-            <p className="text-[18px] font-normal leading-[30px] text-black mb-8">
-              Chúng tôi rất mong nhận được phản hồi từ bạn. Hãy liên hệ với
-              chúng tôi qua email hoặc hotline để được hỗ trợ tốt nhất.
+          <div className="mt-5 p-4 bg-light rounded">
+            <h3 className="fs-2 fw-bold text-dark mb-4">Gửi Tin Nhắn Cho Chúng Tôi</h3>
+            <p className="fs-5 fw-normal text-dark mb-4">
+              Chúng tôi rất mong nhận được phản hồi từ bạn. Hãy liên hệ với chúng tôi qua email hoặc hotline để được hỗ trợ tốt nhất.
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="d-flex justify-content-center gap-3">
               <a
                 href="mailto:support@thecoffeehouse.vn"
-                className="bg-[#FFC107] text-black text-[18px] font-medium leading-[30px] px-8 py-3 rounded-lg hover:bg-[#FFB300] transition-colors"
+                className="btn btn-warning text-black px-4 py-2 fw-medium fs-5"
+                style={{background:'#FFC107', border:'none'}}
               >
                 Gửi Email
               </a>
               <a
                 href="tel:18006936"
-                className="bg-[#212529] text-white text-[18px] font-medium leading-[30px] px-8 py-3 rounded-lg hover:bg-[#343a40] transition-colors"
+                className="btn btn-dark text-white px-4 py-2 fw-medium fs-5"
+                style={{background:'#212529', border:'none'}}
               >
                 Gọi Hotline
               </a>

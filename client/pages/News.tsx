@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
@@ -52,7 +53,7 @@ const News = () => {
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/437718d6214232d7427270e3fbfe29eaff268cd6?width=548",
       date: "05/01/2025",
-      category: "Hướng d���n",
+      category: "Hướng dẫn",
     },
     {
       id: 6,
@@ -89,35 +90,32 @@ const News = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-[397px] overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="position-relative overflow-hidden" style={{height:397}}>
+        <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity:1}}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"
-            className="w-full h-full object-cover"
+            className="w-100 h-100 object-fit-cover"
           />
-          <div className="absolute inset-0 bg-black/65 opacity-60"></div>
+          <div className="position-absolute top-0 start-0 w-100 h-100" style={{background:'rgba(0,0,0,0.65)'}}></div>
         </div>
-
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold leading-tight mb-4">
-            Tin Tức
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-[28px] font-normal leading-relaxed max-w-[712px]">
-            Cập nhật những tin tức mới nhất từ The Coffee House
+        <div className="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white px-3" style={{zIndex: 3, height: 397}}>
+          <h1 className="fw-bold mb-3 pt-5" style={{fontSize: 48, lineHeight: 1.1}}>Tin tức</h1>
+          <p className="mb-4 mx-auto" style={{fontSize: 22, maxWidth: 700}}>
+            Cập nhật những thông tin mới nhất từ The Coffee House
           </p>
         </div>
       </section>
 
       {/* Categories Filter */}
-      <section className="py-8 px-4 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-wrap justify-center gap-4">
+      <section className="py-4 px-4 bg-light">
+        <div className="container">
+          <div className="d-flex flex-wrap justify-content-center gap-2">
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-6 py-2 rounded-full border-2 border-[#FFC107] text-black hover:bg-[#FFC107] hover:text-white transition-colors font-medium"
-              >
+                className="btn btn-outline-warning rounded-pill fw-medium px-4 py-2"
+                style={{borderColor:'#FFC107', color:'#212529'}}>
                 {category}
               </button>
             ))}
@@ -126,121 +124,66 @@ const News = () => {
       </section>
 
       {/* Featured News */}
-      <section className="py-16 px-4">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="text-[32px] font-bold text-black text-center mb-12">
-            Tin Nổi Bật
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <span className="text-[#FFC107] font-medium text-lg">
-                {featuredNews.category}
-              </span>
-              <h3 className="text-[36px] font-bold leading-tight text-black mt-2 mb-4">
-                {featuredNews.title}
-              </h3>
-              <p className="text-[20px] font-normal leading-relaxed text-gray-700 mb-6">
-                {featuredNews.excerpt}
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500">{featuredNews.date}</span>
-                <Link
-                  to={`/news/${featuredNews.id}`}
-                  className="bg-[#FFC107] text-black px-6 py-3 rounded-lg font-bold hover:bg-[#FFB300] transition-colors"
-                >
-                  Đọc thêm
-                </Link>
+      <section className="py-5 px-4">
+        <div className="container">
+          <h2 className="fs-1 fw-bold text-dark text-center mb-5">Tin Nổi Bật</h2>
+          <div className="row align-items-center g-5">
+            <div className="col-12 col-lg-6 order-2 order-lg-1">
+              <span className="fw-medium text-warning fs-5">{featuredNews.category}</span>
+              <h3 className="fs-1 fw-bold text-dark mt-2 mb-3">{featuredNews.title}</h3>
+              <p className="fs-5 text-secondary mb-4">{featuredNews.excerpt}</p>
+              <div className="d-flex align-items-center justify-content-between">
+                <span className="text-secondary">{featuredNews.date}</span>
+                <Link to={`/news/${featuredNews.id}`} className="btn btn-warning text-black fw-bold px-4 py-2" style={{background:'#FFC107', border:'none'}}>Đọc thêm</Link>
               </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <img
-                src={featuredNews.image}
-                alt={featuredNews.title}
-                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-              />
+            <div className="col-12 col-lg-6 order-1 order-lg-2">
+              <img src={featuredNews.image} alt={featuredNews.title} className="w-100 rounded shadow" style={{height:400, objectFit:'cover'}} />
             </div>
           </div>
         </div>
       </section>
 
       {/* News Grid */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="text-[32px] font-bold text-black text-center mb-12">
-            Tin Tức Khác
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-5 px-4 bg-light">
+        <div className="container">
+          <h2 className="fs-1 fw-bold text-dark text-center mb-5">Tin Tức Khác</h2>
+          <div className="row g-4">
             {newsArticles.map((article) => (
-              <Link
-                key={article.id}
-                to={`/news/${article.id}`}
-                className="group"
-              >
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                    />
-                  </div>
-                  <div
-                    className={
-                      article.title === "Xu hướng thức uống healthy 2025"
-                        ? "px-6 pt-6 pb-[50px]"
-                        : "p-6"
-                    }
-                  >
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[#FFC107] font-medium text-sm">
-                        {article.category}
-                      </span>
-                      <span className="text-gray-500 text-sm">
-                        {article.date}
-                      </span>
+              <div key={article.id} className="col-12 col-md-6 col-lg-4">
+                <Link to={`/news/${article.id}`} className="text-decoration-none">
+                  <div className="card shadow border-0 h-100">
+                    <img src={article.image} alt={article.title} className="w-100 rounded-top" style={{aspectRatio:'4/3', objectFit:'cover'}} />
+                    <div className="p-4">
+                      <div className="d-flex align-items-center justify-content-between mb-2">
+                        <span className="fw-medium text-warning small">{article.category}</span>
+                        <span className="text-secondary small">{article.date}</span>
+                      </div>
+                      <h3 className="fs-5 fw-bold text-dark mb-2">{article.title}</h3>
+                      <p className="text-secondary mb-0" style={{display:'-webkit-box', WebkitLineClamp:3, WebkitBoxOrient:'vertical', overflow:'hidden'}}>{article.excerpt}</p>
                     </div>
-                    <h3 className="text-[20px] font-bold text-black mb-3 group-hover:text-[#FFC107] transition-colors">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed line-clamp-3">
-                      {article.excerpt}
-                    </p>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
-
           {/* Load More */}
-          <div className="text-center mt-12">
-            <button className="bg-[#212529] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#343a40] transition-colors">
-              Xem thêm tin tức
-            </button>
+          <div className="text-center mt-5">
+            <button className="btn btn-dark fw-bold px-4 py-2">Xem thêm tin tức</button>
           </div>
         </div>
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 px-4 bg-[#FFC107]">
-        <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[32px] font-bold text-black mb-4">
-            📧 Đăng Ký Nhận Tin
-          </h2>
-          <p className="text-[20px] font-normal text-black mb-8 max-w-[600px] mx-auto">
-            Đăng ký để nhận thông tin về sản phẩm mới, khuyến mãi và tin tức mới
-            nhất từ The Coffee House
+      <section className="py-5 px-4" style={{background:'#FFC107'}}>
+        <div className="container text-center">
+          <h2 className="fs-1 fw-bold text-dark mb-3">📧 Đăng Ký Nhận Tin</h2>
+          <p className="fs-4 text-dark mb-4 mx-auto" style={{maxWidth:600}}>
+            Đăng ký để nhận thông tin về sản phẩm mới, khuyến mãi và tin tức mới nhất từ The Coffee House
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-[500px] mx-auto">
-            <input
-              type="email"
-              placeholder="Nhập email của bạn"
-              className="flex-1 px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-[#212529]"
-            />
-            <button className="bg-[#212529] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#343a40] transition-colors">
-              Đăng ký
-            </button>
+          <div className="d-flex flex-column flex-sm-row gap-2 mx-auto" style={{maxWidth:500}}>
+            <input type="email" placeholder="Nhập email của bạn" className="form-control flex-fill" />
+            <button className="btn btn-dark fw-bold px-4 py-2 flex-shrink-0">Đăng ký</button>
           </div>
         </div>
       </section>

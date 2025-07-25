@@ -1,3 +1,4 @@
+import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Layout from "../components/Layout";
@@ -14,15 +15,14 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <div className="min-h-[500px] flex items-center justify-center">
+      <div className="d-flex justify-content-center align-items-center" style={{minHeight:500}}>
         <div className="text-center">
-          <h1 className="text-[60px] font-bold mb-6 text-black">404</h1>
-          <p className="text-[28px] font-normal mb-8 text-black">
-            Không tìm thấy trang bạn yêu cầu
-          </p>
+          <h1 className="display-1 fw-bold mb-4 text-dark">404</h1>
+          <p className="fs-2 fw-normal mb-4 text-dark">Không tìm thấy trang bạn yêu cầu</p>
           <Link
             to="/"
-            className="bg-[#FFC107] text-black text-[20px] font-medium px-8 py-3 rounded-lg hover:bg-[#FFB300] transition-colors inline-block"
+            className="btn btn-warning text-black fw-medium fs-4 px-5 py-3"
+            style={{background:'#FFC107', border:'none'}}
           >
             Quay về Trang chủ
           </Link>

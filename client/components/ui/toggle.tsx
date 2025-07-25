@@ -1,43 +1,28 @@
+
 import * as React from "react";
-import * as TogglePrimitive from "@radix-ui/react-toggle";
-import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+type ToggleProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  pressed?: boolean;
+  variant?: "default" | "outline";
+  size?: "default" | "sm" | "lg";
+};
 
-const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
-  {
-    variants: {
-      variant: {
-        default: "bg-transparent",
-        outline:
-          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
-      },
-      size: {
-        default: "h-10 px-3",
-        sm: "h-9 px-2.5",
-        lg: "h-11 px-5",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  },
+export const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
+  ({ pressed = false, variant = "default", size = "default", className = "", ...props }, ref) => {
+    let btnClass = "btn";
+    btnClass += variant === "outline" ? " btn-outline-primary" : " btn-primary";
+    if (size === "sm") btnClass += " btn-sm";
+    if (size === "lg") btnClass += " btn-lg";
+    if (pressed) btnClass += " active";
+    return (
+      <button
+        ref={ref}
+        type="button"
+        aria-pressed={pressed}
+        className={`${btnClass} ${className}`.trim()}
+        {...props}
+      />
+    );
+  }
 );
-
-const Toggle = React.forwardRef<
-  React.ElementRef<typeof TogglePrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> &
-    VariantProps<typeof toggleVariants>
->(({ className, variant, size, ...props }, ref) => (
-  <TogglePrimitive.Root
-    ref={ref}
-    className={cn(toggleVariants({ variant, size, className }))}
-    {...props}
-  />
-));
-
-Toggle.displayName = TogglePrimitive.Root.displayName;
-
-export { Toggle, toggleVariants };
+Toggle.displayName = "Toggle";
