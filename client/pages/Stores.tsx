@@ -116,7 +116,7 @@ const Stores = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+
       <section className="position-relative overflow-hidden" style={{height:397}}>
         <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity:1}}>
           <img
@@ -134,7 +134,6 @@ const Stores = () => {
         </div>
       </section>
 
-      {/* Store Stats */}
       <section className="py-5 px-4" style={{background:'#FFC107'}}>
         <div className="container">
           <div className="row text-center gy-4">
@@ -158,7 +157,6 @@ const Stores = () => {
         </div>
       </section>
 
-      {/* City Filter */}
       <section className="py-4 px-4 bg-light">
         <div className="container">
           <h2 className="fs-3 fw-bold text-dark text-center mb-4">Chọn thành phố:</h2>
@@ -177,7 +175,6 @@ const Stores = () => {
         </div>
       </section>
 
-      {/* Store Listings */}
       <section className="py-5 px-4">
         <div className="container">
           <div className="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
@@ -239,7 +236,6 @@ const Stores = () => {
         </div>
       </section>
 
-      {/* Store Locator CTA */}
       <section className="py-5 px-4 bg-light">
         <div className="container text-center">
           <h2 className="fs-1 fw-bold text-dark mb-4">Không tìm thấy cửa hàng gần bạn?</h2>

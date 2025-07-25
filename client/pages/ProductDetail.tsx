@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const [selectedSizeIndex, setSelectedSizeIndex] = useState<number | null>(null);
 
   const products = {
     "ca-phe-sua": {
@@ -59,7 +60,7 @@ const ProductDetail = () => {
 
   return (
     <Layout>
-      {/* Breadcrumb */}
+
       <section className="py-3 px-4 bg-light">
         <div className="container">
           <nav className="small">
@@ -72,11 +73,11 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Product Detail */}
+
       <section className="py-5 px-4">
         <div className="container">
           <div className="row g-5 align-items-start">
-            {/* Product Image */}
+
             <div className="col-12 col-lg-6 d-flex flex-column align-items-center">
               <div className="w-100" style={{maxWidth:500}}>
                 <img
@@ -87,7 +88,7 @@ const ProductDetail = () => {
                 />
               </div>
             </div>
-            {/* Product Info */}
+
             <div className="col-12 col-lg-6">
               <span className="fw-medium text-warning fs-5">{product.category}</span>
               <h1 className="display-4 fw-bold text-dark mt-2">{product.name}</h1>
@@ -98,27 +99,32 @@ const ProductDetail = () => {
                 )}
               </div>
               <p className="fs-5 text-dark mb-4">{product.description}</p>
-              {/* Size Selection */}
+
               <div className="mb-4">
                 <h3 className="fs-3 fw-bold text-dark mb-2">Chọn Size:</h3>
                 <div className="row g-2">
                   {product.sizes.map((size, index) => (
                     <div key={index} className="col-12 col-sm-4">
-                      <div className="border rounded p-3 text-center h-100">
-                        <p className="fw-bold text-dark mb-1">{size.name}</p>
+                      <div
+                        className={`size-card border rounded p-3 text-center h-100 ${
+                          selectedSizeIndex === index ? "selected" : ""
+                        }`}
+                        onClick={() => setSelectedSizeIndex(index)}
+                      >
+                        <p className="fw-bold mb-1">{size.name}</p>
                         <p className="text-secondary mb-1">{size.volume}</p>
-                        <p className="fw-bold text-warning mb-0">{size.price}đ</p>
+                        <p className="fw-bold mb-0">{size.price}đ</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              {/* Add to Cart */}
+
               <div className="d-flex gap-3 mb-4">
                 <button className="btn btn-warning flex-fill text-black fw-bold fs-5 py-3" style={{background:'#FFC107', border:'none'}}>Thêm vào giỏ hàng</button>
                 <button className="btn btn-dark fw-bold fs-5 py-3">Mua ngay</button>
               </div>
-              {/* Product Details */}
+
               <div className="pt-4 border-top">
                 <div className="mb-4">
                   <h3 className="fs-3 fw-bold text-dark mb-2">Thành phần:</h3>
@@ -160,7 +166,6 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Related Products */}
       <section className="py-5 px-4 bg-light">
         <div className="container">
           <h2 className="fs-1 fw-bold text-dark text-center mb-5">Sản phẩm liên quan</h2>

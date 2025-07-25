@@ -24,7 +24,7 @@ const About = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+
       <section className="position-relative overflow-hidden" style={{height:397}}>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
@@ -41,7 +41,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Content */}
       <section className="py-5 px-4">
         <div className="container">
           <h2 className="fs-1 fw-bold text-dark text-center mb-5">Về The Coffee House</h2>

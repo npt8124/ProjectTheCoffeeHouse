@@ -89,7 +89,7 @@ const News = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      
       <section className="position-relative overflow-hidden" style={{height:397}}>
         <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity:1}}>
           <img
@@ -107,7 +107,6 @@ const News = () => {
         </div>
       </section>
 
-      {/* Categories Filter */}
       <section className="py-4 px-4 bg-light">
         <div className="container">
           <div className="d-flex flex-wrap justify-content-center gap-2">
@@ -123,7 +122,6 @@ const News = () => {
         </div>
       </section>
 
-      {/* Featured News */}
       <section className="py-5 px-4">
         <div className="container">
           <h2 className="fs-1 fw-bold text-dark text-center mb-5">Tin Nổi Bật</h2>
@@ -144,7 +142,6 @@ const News = () => {
         </div>
       </section>
 
-      {/* News Grid */}
       <section className="py-5 px-4 bg-light">
         <div className="container">
           <h2 className="fs-1 fw-bold text-dark text-center mb-5">Tin Tức Khác</h2>
@@ -167,14 +164,12 @@ const News = () => {
               </div>
             ))}
           </div>
-          {/* Load More */}
           <div className="text-center mt-5">
             <button className="btn btn-dark fw-bold px-4 py-2">Xem thêm tin tức</button>
           </div>
         </div>
       </section>
 
-      {/* Newsletter Signup */}
       <section className="py-5 px-4" style={{background:'#FFC107'}}>
         <div className="container text-center">
           <h2 className="fs-1 fw-bold text-dark mb-3">📧 Đăng Ký Nhận Tin</h2>

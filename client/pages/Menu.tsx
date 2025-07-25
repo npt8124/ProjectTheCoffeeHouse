@@ -71,7 +71,7 @@ const Menu = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+
       <section className="position-relative overflow-hidden" style={{height:397}}>
         <div className="position-absolute top-0 start-0 w-100 h-100">
           <img
@@ -90,7 +90,6 @@ const Menu = () => {
         </div>
       </section>
 
-      {/* Menu Section */}
       <section className="py-5 px-4">
         <div className="container">
           <h2 className="fs-1 fw-bold text-dark text-center mb-5">Thực Đơn</h2>

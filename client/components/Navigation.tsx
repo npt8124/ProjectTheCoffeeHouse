@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -18,7 +17,6 @@ const Navigation = () => {
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  // Đóng menu khi chọn mục hoặc bấm overlay
   const handleCloseMenu = () => setShowMobileMenu(false);
 
   return (
@@ -28,7 +26,7 @@ const Navigation = () => {
           <Link to="/" className="navbar-brand text-white fw-bold" style={{ fontSize: 18, lineHeight: '30px' }}>
             The Coffee House
           </Link>
-          {/* Nút 3 gạch chỉ hiện trên mobile */}
+
           <button
             className="navbar-toggler text-white border-0 d-md-none"
             type="button"
@@ -37,7 +35,7 @@ const Navigation = () => {
           >
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1" fill="currentColor"/><rect y="11" width="24" height="2" rx="1" fill="currentColor"/><rect y="17" width="24" height="2" rx="1" fill="currentColor"/></svg>
           </button>
-          {/* Menu desktop */}
+
           <div className="collapse navbar-collapse d-none d-md-block" id="mainNav">
             <ul className="navbar-nav ms-auto align-items-center gap-2 gap-lg-4" style={{ columnGap: 31 }}>
               {navItems.map((item) => (
@@ -56,17 +54,16 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Overlay menu mobile */}
-      {/* Dropdown menu mobile */}
+
       {showMobileMenu && (
         <>
-          {/* Overlay click ra ngoài để đóng */}
+
           <div
             className="position-fixed top-0 start-0 w-100 h-100"
             style={{zIndex: 1999, background: 'transparent'}}
             onClick={handleCloseMenu}
           />
-          {/* Dropdown menu */}
+
           <div
             className="position-absolute w-100 d-flex justify-content-end"
             style={{ top: 69, left: 0, zIndex: 2000 }}

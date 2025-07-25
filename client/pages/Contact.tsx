@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 const Contact = () => {
   return (
     <Layout>
-      {/* Hero Section */}
+
       <section className="position-relative overflow-hidden" style={{height:397}}>
         <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity:1}}>
           <img
@@ -22,7 +22,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Information */}
       <section className="py-5 px-4">
         <div className="container text-center">
           <h2 className="fs-1 fw-bold text-dark mb-5">

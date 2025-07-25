@@ -43,7 +43,7 @@ const Order = () => {
     0,
   );
   const deliveryFee = deliveryMethod === "delivery" ? 15000 : 0;
-  const discount = 0; // Can be calculated based on promotions
+  const discount = 0;
   const total = subtotal + deliveryFee - discount;
 
   const updateQuantity = (id: number, newQuantity: number) => {
@@ -65,7 +65,7 @@ const Order = () => {
 
   return (
     <Layout>
-      {/* Header */}
+
       <section className="py-4 bg-white border-bottom">
         <div className="container">
           <div className="d-flex align-items-center justify-content-between">
@@ -82,71 +82,38 @@ const Order = () => {
       </section>
 
       <div className="container py-5">
-        <div className="row g-2">
-          {/* Giao hàng tận nơi */}
-          <div className="col-12 col-md-6">
-            <label
-              className={`form-control d-flex align-items-start gap-3 p-3 border-2 rounded h-100 ${
-                deliveryMethod === "delivery" ? "border-warning bg-warning bg-opacity-10" : ""
-              }`}
-              style={
-                deliveryMethod === "delivery"
-                  ? { borderColor: "#FFC107", background: "rgba(255,193,7,0.1)" }
-                  : {}
-              }
-            >
-              <input
-                type="radio"
-                name="delivery"
-                value="delivery"
-                checked={deliveryMethod === "delivery"}
-                onChange={(e) => setDeliveryMethod(e.target.value)}
-                className="form-check-input mt-1"
-              />
-              <span className="fs-3">🚚</span>
-              <div className="d-flex flex-column">
-                <span className="fw-bold">Giao hàng tận nơi</span>
-                <span className="text-secondary" style={{ fontSize: 14 }}>
-                  Phí giao hàng: 15.000đ
-                </span>
-              </div>
-            </label>
-          </div>
+        <div className="row g-4">
 
-          {/* Nhận tại cửa hàng */}
-          <div className="col-12 col-md-6">
-            <label
-              className={`form-control d-flex align-items-start gap-3 p-3 border-2 rounded h-100 ${
-                deliveryMethod === "pickup" ? "border-warning bg-warning bg-opacity-10" : ""
-              }`}
-              style={
-                deliveryMethod === "pickup"
-                  ? { borderColor: "#FFC107", background: "rgba(255,193,7,0.1)" }
-                  : {}
-              }
-            >
-              <input
-                type="radio"
-                name="delivery"
-                value="pickup"
-                checked={deliveryMethod === "pickup"}
-                onChange={(e) => setDeliveryMethod(e.target.value)}
-                className="form-check-input mt-1"
-              />
-              <span className="fs-3">🏪</span>
-              <div className="d-flex flex-column">
-                <span className="fw-bold">Nhận tại cửa hàng</span>
-                <span className="text-secondary" style={{ fontSize: 14 }}>
-                  Miễn phí
-                </span>
-              </div>
-            </label>
-          </div>
-        </div>
+          <div className="col-12 col-lg-8 d-flex flex-column gap-4">
 
+            <div className="bg-white rounded shadow-sm p-4">
+              <h2 className="fs-5 fw-bold text-dark mb-3">Phương thức nhận hàng</h2>
+              <div className="row g-2">
+                <div className="col-12 col-md-6">
+                  <label className={`form-control h-100 d-flex justify-content-between align-items-center border-2 rounded ${deliveryMethod === "delivery" ? 'border-warning bg-warning bg-opacity-10' : ''}`}
+                    style={deliveryMethod === "delivery" ? {borderColor:'#FFC107', background:'rgba(255,193,7,0.1)'} : {}}>                   
+                    <div className="d-flex align-items-center gap-2">
+                      <input type="radio" name="delivery" value="delivery" checked={deliveryMethod === "delivery"} onChange={(e) => setDeliveryMethod(e.target.value)} className="form-check-input me-2" />
+                      <span className="fs-4">🚚</span>
+                      <span className="fw-bold">Giao hàng tận nơi</span>
+                    </div>
+                    <span className="text-secondary">Phí giao hàng: 15.000đ</span>
+                  </label>
+                </div>
+                <div className="col-12 col-md-6">
+                  <label className={`form-control h-100 d-flex justify-content-between align-items-center border-2 rounded ${deliveryMethod === "pickup" ? 'border-warning bg-warning bg-opacity-10' : ''}`}
+                    style={deliveryMethod === "pickup" ? {borderColor:'#FFC107', background:'rgba(255,193,7,0.1)'} : {}}>
+                    <div className="d-flex align-items-center gap-2">
+                      <input type="radio" name="delivery" value="pickup" checked={deliveryMethod === "pickup"} onChange={(e) => setDeliveryMethod(e.target.value)} className="form-check-input me-2" />
+                      <span className="fs-4">🏪</span>
+                      <span className="fw-bold">Nhận tại cửa hàng</span>
+                    </div>
+                    <span className="text-secondary">Miễn phí</span>
+                  </label>
+                </div>
+              </div>
             </div>
 
-            {/* Cart Items */}
             <div className="bg-white rounded shadow-sm p-4">
               <h2 className="fs-5 fw-bold text-dark mb-3">Giỏ hàng của bạn</h2>
               <div className="d-flex flex-column gap-3">
@@ -172,7 +139,6 @@ const Order = () => {
               </div>
             </div>
 
-            {/* Customer Information */}
             <div className="bg-white rounded shadow-sm p-4">
               <h2 className="fs-5 fw-bold text-dark mb-3">Thông tin khách hàng</h2>
               <div className="row g-3">
@@ -209,9 +175,8 @@ const Order = () => {
             </div>
           </div>
 
-          {/* Right Column */}
           <div className="col-12 col-lg-4 d-flex flex-column gap-4">
-            {/* Payment Method */}
+
             <div className="bg-white rounded shadow-sm p-4">
               <h2 className="fs-5 fw-bold text-dark mb-3">Phương thức thanh toán</h2>
               <div className="d-flex flex-column gap-2">
@@ -235,7 +200,7 @@ const Order = () => {
                 </label>
               </div>
             </div>
-            {/* Order Summary */}
+
             <div className="bg-white rounded shadow-sm p-4">
               <h2 className="fs-5 fw-bold text-dark mb-3">Tổng đơn hàng</h2>
               <div className="d-flex flex-column gap-2 mb-3">

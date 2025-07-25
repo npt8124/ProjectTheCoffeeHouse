@@ -29,7 +29,7 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+
       <section className="position-relative overflow-hidden" style={{height: 397}}>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
@@ -55,7 +55,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="py-5 px-3">
         <div className="container text-center">
           <h2 className="fw-bold mb-3" style={{fontSize: 32, lineHeight: '30px', color: '#000'}}>
@@ -67,7 +66,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Menu */}
       <section className="py-5 px-3 bg-light">
         <div className="container">
           <h2 className="fw-bold text-center mb-4" style={{fontSize: 32, color: '#000', lineHeight: '30px'}}>
@@ -96,7 +94,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Promotion Banner */}
       <section className="bg-warning py-4">
         <div className="container text-center">
           <h2 className="fw-bold mb-2" style={{fontSize: 28, color: '#000', lineHeight: '30px'}}>
@@ -108,7 +105,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-4">
         <div className="container text-center">
           <h2 className="fw-bold mb-2" style={{fontSize: 22, color: '#000', lineHeight: '30px'}}>

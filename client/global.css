@@ -28,7 +28,6 @@
     font-weight: 700 !important;
   }
 
-  /* Hero image & overlay responsive height */
   .hero-img,
   .hero-overlay {
     height: 170px !important;
@@ -72,3 +71,84 @@ body {
   font-size: 15px;
 }
 
+.nav-link {
+  color: white;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+  transform: scale(1.1);
+}
+
+.nav-link:active {
+  transform: scale(0.98) translateY(2px);
+  color: #ffc107 !important;
+}
+
+.nav-link.active {
+  color: #ffc107 !important;
+}
+
+.dropdown-item-mobile {
+  color: white;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-item-mobile:hover {
+  color: #ffc107 !important;
+  transform: scale(1.1);
+}
+
+.dropdown-item-mobile:active {
+  transform: scale(0.98) translateY(2px);
+}
+
+.form-control {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.form-control:hover {
+  transform: scale(1.02);
+  background-color: rgba(255, 193, 7, 0.15);
+  cursor: pointer;
+}
+
+.form-control:active {
+  transform: scale(0.98) translateY(2px);
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card:active {
+  transform: scale(0.98) translateY(2px);
+}
+
+.size-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.size-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.size-card:active {
+  transform: scale(0.97);
+}
+
+.size-card.selected {
+  background-color: #ffc107 !important;
+  color: white;
+  font-weight: bold;
+  border-color: #ffc107;
+}
