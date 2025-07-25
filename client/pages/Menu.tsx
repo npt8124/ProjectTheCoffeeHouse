@@ -97,22 +97,22 @@ const Menu = () => {
           <div className="row justify-content-center gx-3 gy-3" style={{maxWidth:1200, margin:'0 auto'}}>
             {menuItems.map((item) => (
               <Link key={item.id} to="/product/ca-phe-den" className="col-6 col-lg-4 d-flex align-items-stretch text-decoration-none">
-                <div className="card w-100 shadow border-0">
+                <div className="card w-100 shadow border-0 hover-card">
                   <div className="p-3">
-                    <div className="mx-auto mb-3 overflow-hidden rounded" style={{width:180, height:180}}>
-
+                    <div className="mx-auto mb-3 overflow-hidden rounded image-container">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-100 h-100 object-fit-cover"
-                        style={{objectFit:'cover'}}
+                        className="w-100 h-100 image-zoom"
+                        style={{ objectFit: 'cover' }}
                       />
                     </div>
-                    <h3 className="fs-5 fw-bold text-dark text-center mb-2">{item.name}</h3>
+                    <h3 className="fs-5 fw-bold text-dark text-center mb-2 item-title">{item.name}</h3>
                     <p className="fs-6 fw-normal text-dark text-center">{item.description}</p>
                   </div>
                 </div>
               </Link>
+
             ))}
           </div>
         </div>

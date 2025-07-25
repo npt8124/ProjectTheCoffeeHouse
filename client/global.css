@@ -49,3 +49,25 @@ body {
     sans-serif;
   font-size: 15px;
 }
+
+.image-container {
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.image-zoom {
+  transition: transform 0.4s ease;
+}
+
+.hover-card:hover .image-zoom {
+  transform: scale(1.1);
+}
+
+/* Đổi màu tiêu đề khi hover */
+.hover-card:hover .item-title {
+  color: #ffc107 !important;
+}
+.item-title {
+  transition: color 0.3s ease;
+}
