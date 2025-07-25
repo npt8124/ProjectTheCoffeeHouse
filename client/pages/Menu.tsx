@@ -6,7 +6,7 @@ const Menu = () => {
   const menuItems = [
     {
       id: 1,
-      name: "Cà Phê Đen",
+      name: "Cà Phê Sữa",
       description: "Hương vị truyền thống, đậm đà khó quên.",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/437718d6214232d7427270e3fbfe29eaff268cd6?width=548",
@@ -100,6 +100,7 @@ const Menu = () => {
                 <div className="card w-100 shadow border-0">
                   <div className="p-3">
                     <div className="mx-auto mb-3 overflow-hidden rounded" style={{width:180, height:180}}>
+
                       <img
                         src={item.image}
                         alt={item.name}

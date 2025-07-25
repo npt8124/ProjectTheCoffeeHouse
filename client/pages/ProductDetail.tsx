@@ -5,11 +5,10 @@ import Layout from "../components/Layout";
 const ProductDetail = () => {
   const { id } = useParams();
 
-  // Sample product data - in real app this would come from API/database
   const products = {
-    "ca-phe-den": {
-      id: "ca-phe-den",
-      name: "Cà Phê Đen",
+    "ca-phe-sua": {
+      id: "ca-phe-sua",
+      name: "Cà Phê Sữa",
       price: "25.000",
       originalPrice: "30.000",
       description:
@@ -32,12 +31,12 @@ const ProductDetail = () => {
   };
 
   const product =
-    products[id as keyof typeof products] || products["ca-phe-den"];
+    products[id as keyof typeof products] || products["ca-phe-sua"];
 
   const relatedProducts = [
     {
-      id: "ca-phe-sua",
-      name: "Cà Phê Sữa",
+      id: "ca-phe-den",
+      name: "Cà Phê Đen",
       price: "30.000",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/f0c1e108cb9f6e3c8fb06a4a315d1bec26f5a009?width=548",
