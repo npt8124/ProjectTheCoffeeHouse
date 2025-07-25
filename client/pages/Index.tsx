@@ -15,7 +15,7 @@ const Index = () => {
       name: "Matcha Đào Đá Xay",
       description: "Mát lạnh, đầy năng lượng cho cuộc sống năng động.",
       image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/4189082daa6e60c56c74f3a53fd481a582de3e4d?width=548",
+        "https://product.hstatic.net/1000075078/product/1745246637_matcha-dao-da-xay_3a33d27eeded4d35aeeaa93e8687f88b.png",
     },
     {
       id: 3,
