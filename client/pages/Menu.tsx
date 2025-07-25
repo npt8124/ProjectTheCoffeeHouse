@@ -100,7 +100,7 @@ const Menu = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1372px] mx-auto">
             {menuItems.map((item) => (
-              <Link key={item.id} to="/product/ca-phe-den" className="group">
+              <Link key={item.id} to="/product/ca-phe-sua" className="group">
                 <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-white/3">
                   <div className="p-6">
                     <div className="w-[274px] h-[274px] mx-auto mb-6 overflow-hidden rounded-lg">

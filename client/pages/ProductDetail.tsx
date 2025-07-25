@@ -6,7 +6,7 @@ const ProductDetail = () => {
 
   // Sample product data - in real app this would come from API/database
   const products = {
-    "ca-phe-den": {
+    "ca-phe-sua": {
       id: "ca-phe-sua",
       name: "Cà Phê Sữa",
       price: "25.000",
