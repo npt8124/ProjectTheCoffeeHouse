@@ -35,7 +35,7 @@ const Stores = () => {
     {
       id: 2,
       name: "The Coffee House Landmark 81",
-      address: "T��ng G, Landmark 81, Bình Thạnh, TP. Hồ Chí Minh",
+      address: "Tầng G, Landmark 81, Bình Thạnh, TP. Hồ Chí Minh",
       phone: "028 3844 5678",
       hours: "07:00 - 23:00",
       city: "Hồ Chí Minh",
