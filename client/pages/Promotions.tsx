@@ -51,7 +51,8 @@ const Promotions = () => {
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c01e866677125fc95dd6f924e3ee81f46fc2062?width=2892"
             alt="Coffee shop interior"
-            className="w-100 h-100 object-fit-cover"
+            className="w-100 h-100"
+            style={{objectFit:'cover', height: 397}}
           />
           <div className="position-absolute top-0 start-0 w-100 h-100" style={{background:'rgba(0,0,0,0.65)'}}></div>
         </div>
